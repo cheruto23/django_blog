@@ -29,7 +29,7 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name ='users/login.html'), name='login'),
     path('logout/', user_views.logout_view, name='logout'),
     path('', include('blog.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# if settings.DEBUG:
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
