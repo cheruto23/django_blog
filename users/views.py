@@ -41,4 +41,4 @@ def profile(request):
     return render(request, 'users/profile.html',context)
 def logout_view(request):
     logout(request)
-    return render(request, 'users/logout.html')
+    return redirect('login')
